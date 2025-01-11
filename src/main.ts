@@ -56,7 +56,7 @@ client.on('message', (topic, payload) => {
     if (topic === 'bus/services/meteo-display/data') {
         try {
             const parsedData = JSON.parse(payload.toString("utf8")) as DisplayData;
-            currentDisplayData = merge(parsedData, currentDisplayData);
+            currentDisplayData = merge(currentDisplayData, parsedData);
         } catch (e) {
             logger.error(`Error parsing data: ${e}`);
         }
