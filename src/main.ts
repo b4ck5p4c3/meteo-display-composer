@@ -225,7 +225,6 @@ client.on('message', (topic, payload) => {
 client.on('connect', () => {
     logger.info('Connected to mqtt');
     client.subscribe('bus/services/meteo-display/data');
-
 });
 
 client.on('error', e => {
