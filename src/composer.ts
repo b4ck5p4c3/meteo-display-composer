@@ -123,7 +123,7 @@ export function composeDisplayString(data: DisplayData): string {
         const temperature = clampAndRound(data.temperature, -99, 99);
         displayString[16] = temperature >= 0 ? '-' : '1';
         displayString[17] = getDigitIfExists(Math.abs(temperature), 1);
-        displayString[18] = getDigitIfExists(Math.abs(temperature), 0);
+        displayString[18] = getDigit(Math.abs(temperature), 0);
     }
     if (exists(data.hasThunder) && data.hasThunder) {
         displayString[22] = '1';

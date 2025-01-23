@@ -19,7 +19,6 @@ const client = mqtt.connect(MQTT_URL, {
 });
 
 async function sendDisplayData(data: DisplayData): Promise<void> {
-    console.info(data);
     await client.publishAsync("bus/devices/meteo-display/data", composeDisplayString(data));
 }
 
